@@ -2,7 +2,7 @@ version: '3.4'
 services:
   netbox:
     ports:
-    - 8080:8080
+    - 8081:8081
     volumes:
     - /volume1/docker/netbox:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:z,rw
