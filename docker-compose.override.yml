@@ -3,22 +3,3 @@ services:
   netbox:
     ports:
     - 8090:8090
-    volumes:
-    - netbox:/etc/netbox/config:z,ro
-    - netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
-    healthcheck:
-      retries: 15
-  netbox-worker:
-    volumes:
-    - netbox:/etc/netbox/config:z,ro
-    - netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
-  netbox-housekeeping:
-    volumes:
-    - netbox:/etc/netbox/config:z,ro
-    - netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
