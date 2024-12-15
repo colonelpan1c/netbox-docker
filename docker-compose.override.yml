@@ -1,10 +1,10 @@
-version: '3.4'
+#version: '3.4'
 services:
   netbox:
     ports:
-    - 8081:8081
+    - 8090:8090
     volumes:
-    - /volume1/docker/netbox:/etc/netbox/config:z,ro
+    - netbox:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:z,rw
     - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
     - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
@@ -12,13 +12,13 @@ services:
       retries: 15
   netbox-worker:
     volumes:
-    - /volume1/docker/netbox:/etc/netbox/config:z,ro
+    - netbox:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:z,rw
     - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
     - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
   netbox-housekeeping:
     volumes:
-    - /volume1/docker/netbox:/etc/netbox/config:z,ro
+    - netbox:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:z,rw
     - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
     - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
