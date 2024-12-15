@@ -9,7 +9,7 @@ services:
     - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
     - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
     healthcheck:
-      retries: 15
+      retries: 30
   netbox-worker:
     volumes:
     - /var/lib/docker/netbox:/etc/netbox/config:z,ro
